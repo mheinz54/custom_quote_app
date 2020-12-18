@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.heinzdevelopment.customquote.QuoteListDropdownItem 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:id="@android:id/text1"
+    style="?android:attr/spinnerDropDownItemStyle"
+    android:layout_width="match_parent"
+    android:layout_height="30dp"
+    android:ellipsize="marquee"
+    android:paddingLeft="30dp"
+    android:singleLine="true"
+    android:textAlignment="inherit" 
+    custom:onDelete="onListDropdownDelete"/>
+

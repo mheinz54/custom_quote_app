@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string-array name="CycleOptions" tools:ignore="MissingTranslation">
+        <item>Random</item>
+        <item>In Order by Quote</item>
+        <item>In Order by Speaker</item>
+    </string-array>
+</resources>

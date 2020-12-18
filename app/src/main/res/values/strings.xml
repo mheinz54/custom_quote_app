@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation,MissingTranslation,MissingTranslation,MissingTranslation,MissingTranslation">
+
+    <string name="app_name">Custom Quote</string>
+    <string name="action_settings">Settings</string>
+    <string name="config_save" >Save</string>
+    <string name="config_cancel" >Cancel</string>
+    <string name="config_manual">Personal Quote</string>
+    <string name="manual_quote_hint" >Quote</string>
+    <string name="manual_speaker_hint">Speaker</string>
+    <string name="manual_quote_picker">Pick From List</string>
+    <string name="config_auto">Cycle Quote</string>
+    <string name="auto_refresh">Refresh Rate</string>
+    <string name="refresh_time">1 hour</string>
+    <string name="cycle_option">Cycle Options</string>
+    <string name="cycle_list">Cycle List</string>
+    <string name="config_settings">Settings</string>
+    <string name="config_font">Quote Font</string>
+    <string name="selected_font">default</string>
+    <string name="config_color">Quote Color</string>
+    <string name="backgroundColorCheckText">Clear Background</string>
+    <string name="BackgroundColorText">Background Color</string>
+    <string name="speakerCheckText">Show Speaker</string>
+    <string name="oneLineCheckText">Wrap Quote</string>
+    <string name="aligmentOptionsText">Align Quote</string>
+    <string name="prependToSpeaker">Prepend to Speaker</string>
+    <string name="title_activity_quote_picker">Quote Picker</string>
+    <string name="search_label">Quotes</string>
+    <string name="search_hint">Search Quotes</string>
+    <string name="action_search">Search Quotes</string>
+    <string name="action_new_quote">Add Quote</string>
+    <string name="action_share_quote">Share Quote</string>
+    <string name="action_edit_quote">Edit Quote</string>
+    <string name="action_addto_list">Add to List</string>
+    <string name="action_remove_quote">Delete Quote</string>
+    <string name="action_accept_quote">Use Quote</string>
+    <string name="add_to_list_hint_optional">Add to List (Optional)</string>
+    <string name="add_to_list_hint">Add to List</string>
+    <string name="action_lists">View List</string>
+    <string name="action_remove_quote_in_list">Remove from List</string>
+    <string name="action_manage">Manage</string>
+    <string name="action_favorites">Favorites</string>
+    <string name="title_activity_how_to_widget">Custom Quote</string>
+    <string name="title_activity_import_export">Import/Export</string>
+    <string name="button_import">Import</string>
+    <string name="button_export">Export</string>
+    <string name="how_to_import"><u>How to Import</u></string>
+    <string name="how_to_export"><u>How to Export</u></string>
+    <string name="title_activity_screen_popup">Custom Quote</string>
+    <string name="favorite_list">Favorite List</string>
+
+    <string name="hello_world">Hello world!</string>
+</resources>

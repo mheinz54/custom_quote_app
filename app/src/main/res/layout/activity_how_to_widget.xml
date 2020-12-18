@@ -1,0 +1,102 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/textWelcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="Welcome to Custom Quote!"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/textExplaination"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textWelcome"
+            android:padding="10dp" />
+
+        <TextView
+            android:id="@+id/textAddToScreen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textExplaination"
+            android:paddingLeft="20dp"
+            android:paddingTop="6dp"
+            android:text="How to add a widget to your screen"
+            android:clickable="true"
+            android:onClick="onHowToAdd"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#ff63b0df"/>
+
+        <TextView
+            android:id="@+id/textNotShowing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textAddToScreen"
+            android:paddingLeft="20dp"
+            android:paddingTop="6dp"
+            android:text="Custom Quote not appearing in widget list"
+            android:clickable="true"
+            android:onClick="onNotShowing"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#ff63b0df"/>
+
+        <TextView
+            android:id="@+id/textFeedback"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textNotShowing"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp"
+            android:text="Let us know what you think! =D\nRate the app in the Play Store or write us an Email\n"/>
+
+        <TextView
+            android:id="@+id/textToPlayStore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textFeedback"
+            android:paddingLeft="20dp"
+            android:text="Rate in Play Store"
+            android:clickable="true"
+            android:onClick="onToPlayStore"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#ff63b0df"/>
+
+        <TextView
+            android:id="@+id/textSendEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textToPlayStore"
+            android:paddingLeft="20dp"
+            android:paddingTop="6dp"
+            android:text="Email: HeinzDevelopment@gmail.com"
+            android:clickable="true"
+            android:onClick="onSendEmail"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#ff63b0df"/>
+
+        <TextView
+            android:id="@+id/textDone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"
+            android:text="Enjoy Custom Quote!"
+            android:layout_below="@+id/textSendEmail"
+            android:layout_centerHorizontal="true"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+           	android:paddingLeft="10dp" />
+
+    </RelativeLayout>
+
+</ScrollView>
+

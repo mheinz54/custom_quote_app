@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.heinzdevelopment.customquote"
+    android:installLocation="internalOnly" >
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+  <!--  <uses-feature android:name="android.software.app_widgets" android:required="true" /> -->
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.Holo.Light" >
+        <receiver
+            android:name=".QuoteProvider"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_provider_info" />
+        </receiver>
+        <receiver
+            android:name=".QuoteAlarmService"
+            android:process=":remote" >
+        </receiver>
+
+        <activity
+            android:name=".QuoteConfigure"
+            android:theme="@android:style/Theme.Holo.Light"
+            android:windowSoftInputMode="stateHidden" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".QuotePickerActivity"
+            android:label="@string/title_activity_quote_picker"
+            android:parentActivityName=".QuoteConfigure"
+            android:theme="@android:style/Theme.Holo.Light" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.heinzdevelopment.customquote.QuoteConfigure" />
+            <!--
+            <intent-filter>
+	            <action android:name="android.intent.action.SEARCH" />
+	        </intent-filter>
+            -->
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+        <activity
+            android:name=".HowToWidget"
+            android:label="@string/title_activity_how_to_widget"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ImportExportActivity"
+            android:label="@string/title_activity_import_export"
+            android:parentActivityName=".QuoteConfigure" >
+        </activity>
+        <activity
+            android:name=".ScreenPopupActivity"
+            android:label="@string/title_activity_screen_popup"
+            android:noHistory="true"
+            android:theme="@android:style/Theme.Dialog">
+        </activity>
+    </application>
+
+</manifest>

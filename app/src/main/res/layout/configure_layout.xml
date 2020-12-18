@@ -1,0 +1,409 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:scrollbars="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dip" >
+
+            <ToggleButton
+                android:id="@+id/manualButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_margin="5dip"
+                android:checked="true"
+                android:onClick="onManual" />
+
+            <TextView
+                android:id="@+id/manualText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/manualButton"
+                android:layout_alignParentLeft="true"
+                android:text="@string/config_manual"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <TextView
+                android:id="@+id/manualQuoteText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/manualButton"
+                android:layout_marginLeft="10dip"
+                android:text="@string/manual_quote_hint"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <EditText
+                android:id="@+id/manualQuote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/manualQuoteText"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="5dip"
+                android:hint="@string/manual_quote_hint"
+                android:inputType="textMultiLine"
+                android:ems="10"/>
+
+            <TextView
+                android:id="@+id/manualSpeakerText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/manualQuote"
+                android:layout_marginLeft="10dip"
+                android:text="@string/manual_speaker_hint"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <EditText
+                android:id="@+id/manualSpeaker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/manualSpeakerText"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="5dip"
+                android:layout_marginTop="5dip"
+                android:hint="@string/manual_speaker_hint"
+                android:inputType="text" />
+
+            <Button
+                android:id="@+id/PickQuoteButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/manualSpeaker"
+                android:layout_centerInParent="true"
+                android:layout_margin="5dip"
+                android:onClick="onQuotePicker"
+                android:text="@string/manual_quote_picker" 
+                android:drawableLeft="@drawable/ic_action_view_as_list"/>
+
+            <Button
+                android:id="@+id/AddQuoteButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/PickQuoteButton"
+                android:layout_alignBottom="@+id/PickQuoteButton"
+                android:layout_toLeftOf="@+id/PickQuoteButton"
+                android:drawableLeft="@drawable/ic_action_new"
+                android:minWidth="22dip"
+                android:onClick="onAddQuote" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dip" >
+
+            <ToggleButton
+                android:id="@+id/autoButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_margin="5dip"
+                android:checked="false"
+                android:onClick="onAuto" />
+
+            <TextView
+                android:id="@+id/autoText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/autoButton"
+                android:layout_alignParentLeft="true"
+                android:text="@string/config_auto"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <Button
+                android:id="@+id/TimeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/autoButton"
+                android:layout_margin="5dip"
+                android:onClick="onTimePicker"
+                android:text="@string/refresh_time" />
+
+            <TextView
+                android:id="@+id/refreshText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/TimeButton"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dip"
+                android:text="@string/auto_refresh"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+            
+            <Spinner
+                android:id="@+id/cycleOptionsSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/TimeButton"
+                android:layout_margin="5dip" />
+
+            <TextView
+                android:id="@+id/cycleOptionsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignBottom="@+id/cycleOptionsSpinner"
+                android:layout_marginLeft="10dip"
+                android:text="@string/cycle_option"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+            
+            <Spinner
+                android:id="@+id/cycleListSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/cycleOptionsSpinner"
+                android:layout_margin="5dip" />
+            
+            <TextView
+                android:id="@+id/cycleListText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignBottom="@+id/cycleListSpinner"
+                android:layout_marginLeft="10dip"
+                android:text="@string/cycle_list"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dip" >
+
+            <TextView
+                android:id="@+id/SettingsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:text="@string/config_settings"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <Button
+                android:id="@+id/FontListButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/SettingsText"
+                android:layout_margin="5dip"
+                android:maxWidth="150dip"
+                android:onClick="onFontPicker"
+                android:text="@string/selected_font" />
+
+            <TextView
+                android:id="@+id/fontText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/FontListButton"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dip"
+                android:text="@string/config_font"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <Button
+                android:id="@+id/ColorListButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/FontListButton"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/FontListButton"
+                android:layout_margin="5dip"
+                android:background="@color/textColor"
+                android:onClick="onColorPicker" />
+
+            <TextView
+                android:id="@+id/colorText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/ColorListButton"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dip"
+                android:text="@string/config_color"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <CheckBox
+                android:id="@+id/backgroundColorCheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/ColorListButton"
+                android:layout_margin="5dip"
+                android:checked="true" />
+
+            <TextView
+                android:id="@+id/backgroundColorCheckText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/backgroundColorCheck"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dip"
+                android:text="@string/backgroundColorCheckText"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <Button
+                android:id="@+id/BackgroundColorButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/FontListButton"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/backgroundColorCheck"
+                android:layout_margin="5dip"
+                android:background="@color/textColor"
+                android:onClick="onBackgroundColorPicker" />
+
+            <TextView
+                android:id="@+id/BackgroundColorText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/BackgroundColorButton"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dip"
+                android:text="@string/BackgroundColorText"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <CheckBox
+                android:id="@+id/speakerCheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/BackgroundColorButton"
+                android:layout_margin="5dip"
+                android:checked="true" />
+
+            <TextView
+                android:id="@+id/speakerCheckText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/speakerCheck"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dip"
+                android:text="@string/speakerCheckText"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+          <!--  <CheckBox
+                android:id="@+id/oneLineCheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/speakerCheck"
+                android:layout_margin="5dip"
+                android:layout_marginTop="15dip"
+                android:checked="true" />
+
+            <TextView
+                android:id="@+id/oneLineCheckText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/oneLineCheck"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dip"
+                android:text="@string/oneLineCheckText"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+            -->
+            <Spinner
+                android:id="@+id/alignmentOptions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/speakerCheck"
+                android:layout_margin="5dip"
+                android:layout_marginTop="15dip" />
+
+            <TextView
+                android:id="@+id/aligmentOptionsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/alignmentOptions"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dip"
+                android:text="@string/aligmentOptionsText"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <EditText
+                android:id="@+id/prependOption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/alignmentOptions"
+                android:layout_margin="5dip"
+                android:inputType="text"
+                android:maxLength="5"/>
+
+            <TextView
+                android:id="@+id/prependOptionText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/prependOption"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dip"
+                android:text="@string/prependToSpeaker"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <EditText
+                android:id="@+id/favoriteOption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/prependOption"
+                android:layout_margin="5dip"
+                android:inputType="text"/>
+
+            <TextView
+                android:id="@+id/favoriteOptionText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/favoriteOption"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dip"
+                android:text="@string/favorite_list"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dip" >
+
+            <Button
+                android:id="@+id/btCancel"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="5dip"
+                android:layout_weight="1"
+                android:onClick="onCancelConfig"
+                android:text="@string/config_cancel" />
+
+            <Button
+                android:id="@+id/btSave"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dip"
+                android:layout_marginLeft="5dip"
+                android:layout_weight="1"
+                android:onClick="onSaveConfig"
+                android:text="@string/config_save" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

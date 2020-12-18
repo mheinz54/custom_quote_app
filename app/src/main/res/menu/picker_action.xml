@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:id="@+id/action_share_quote"
+          android:title="@string/action_share_quote"
+          android:showAsAction="always"
+          android:icon="@drawable/ic_action_share"/>
+    <!--android:actionProviderClass="android.widget.ShareActionProvider" -->
+    <item android:id="@+id/action_addto_list"
+          android:title="@string/action_addto_list"
+          android:icon="@drawable/ic_action_new_event"
+          android:showAsAction="always" />
+    <item android:id="@+id/action_edit_quote"
+          android:title="@string/action_edit_quote"
+          android:icon="@drawable/ic_action_edit"
+          android:showAsAction="always" />
+    <item android:id="@+id/action_remove_quote"
+          android:title="@string/action_remove_quote"
+          android:icon="@drawable/ic_action_discard"
+          android:showAsAction="always" />
+    <item android:id="@+id/action_remove_quote_in_list"
+          android:title="@string/action_remove_quote_in_list"
+          android:icon="@drawable/ic_action_remove_event"
+        android:showAsAction="never" />
+</menu>
